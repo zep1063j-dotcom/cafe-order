@@ -2,8 +2,8 @@
 function App() {
   return (
     <main>
-      <h1>TODO 5</h1>
-      <p>TODO 6</p>
+      <h1>가게 이름 — 「오즈 카페」</h1>
+      <p>한 줄 소개 — 「메뉴를 고르고 주문하는 동네 카페 앱입니다.」</p>
     </main>
   );
 }
