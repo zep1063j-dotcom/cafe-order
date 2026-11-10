@@ -1,0 +1,31 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Firebase CLI가 만드는 내 프로젝트 연결 · 캐시 — 저장소에 올리지 않음
+.firebaserc
+.firebase
+
+# 아침 받기(강사 시작판으로 맞추기) 때 지워졌다 생기기를 되풀이하지 않게
+package-lock.json

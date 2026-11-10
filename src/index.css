@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #2b2118;
+  background: #faf6f1;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+h1 {
+  margin: 0 0 8px;
+}
+button {
+  cursor: pointer;
+}
