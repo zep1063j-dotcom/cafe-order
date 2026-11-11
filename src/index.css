@@ -18,3 +18,35 @@ h1 {
 button {
   cursor: pointer;
 }
+.site-header,
+.site-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.site-header p {
+  margin: 0;
+  color: #7a6a5c;
+}
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.menu-card {
+  width: 220px;
+  padding: 16px;
+  border: 1px solid #e6dccf;
+  border-radius: 12px;
+  background: #ffffff;
+}
+.menu-card h3 {
+  margin: 0 0 6px;
+}
+.menu-card .price {
+  margin: 0;
+  font-weight: bold;
+}
+.menu-card .desc {
+  color: #7a6a5c;
+}

@@ -11,4 +11,5 @@ npm run dev
 
 ## 기능 목록
 
-- [ ] DAY27 프로젝트 시작 — 강사 템플릿으로 내 저장소 만들기 · 첫 실행
+- [x] DAY27 프로젝트 시작 — 강사 템플릿으로 내 저장소 만들기 · 첫 실행
+- [ ] DAY28 메뉴 카드 — Header · MenuCard · Footer, props
