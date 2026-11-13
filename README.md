@@ -13,4 +13,5 @@ npm run dev
 
 - [x] DAY27 프로젝트 시작 — 강사 템플릿으로 내 저장소 만들기 · 첫 실행
 - [x] DAY28 메뉴 카드 — Header · MenuCard · Footer, props
-- [ ] DAY29 담기 — useState로 담은 개수, useEffect로 탭 제목
+- [x] DAY29 담기 — useState로 담은 개수, useEffect로 탭 제목
+- [ ] DAY30 메뉴 목록과 거르기 — map · key · filter · 찾는 글자 칸 · 담은 메뉴 배열

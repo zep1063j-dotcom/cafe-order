@@ -50,3 +50,19 @@ button {
 .menu-card .desc {
   color: #7a6a5c;
 }
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.filters button.active {
+  background: #6b3f1d;
+  color: #ffffff;
+}
+.search {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
