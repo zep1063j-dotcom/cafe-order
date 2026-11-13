@@ -14,13 +14,13 @@ function App() {
   }, [cart.length]);
 
   // 보여 줄 메뉴는 state로 두지 않고 그릴 때마다 계산합니다
-  const visibleMenus = menus.TODO 1(
+  const visibleMenus = menus.filter(
     (menu) =>
       (category === "전체" || menu.category === category) && menu.name.includes(keyword),
   );
 
   function handleAdd(menu) {
-    setCart([TODO 3cart, menu]); // 배열 state는 새 배열로 바꿉니다
+    setCart([...cart, menu]); // 배열 state는 새 배열로 바꿉니다
   }
 
   return (
@@ -42,17 +42,17 @@ function App() {
         </div>
         <input
           className="search"
-          value={TODO 6}
-          onChange={(e) => setKeyword(e.target.TODO 2)}
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
           placeholder="메뉴 이름으로 찾기"
         />
         {visibleMenus.length === 0 ? (
           <p>찾는 메뉴가 없어요</p>
         ) : (
           <div className="menu-list">
-            {visibleMenus.TODO 4((menu) => (
+            {visibleMenus.map((menu) => (
               <MenuCard
-                key={TODO 5}
+                key={menu.id}
                 name={menu.name}
                 price={menu.price}
                 desc={menu.desc}
