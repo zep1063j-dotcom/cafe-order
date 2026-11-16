@@ -1,5 +1,7 @@
-// 메뉴 카드 하나 — 「담기」를 누르면 props로 받은 함수(onAdd)를 불러 App에 알립니다
-function MenuCard({ name, price, desc = "오늘의 메뉴", onAdd }) {
+import { Link } from "react-router";
+
+// 메뉴 카드 하나 — 「자세히」는 그 메뉴의 페이지(/menu/번호)로 갑니다
+function MenuCard({ id, name, price, desc = "오늘의 메뉴", onAdd }) {
   return (
     <article className="menu-card">
       <h3>{name}</h3>
@@ -7,7 +9,8 @@ function MenuCard({ name, price, desc = "오늘의 메뉴", onAdd }) {
       <p className="desc">{desc}</p>
       <button type="button" onClick={onAdd}>
         담기
-      </button>
+      </button>{" "}
+      <Link to={`/menu/${id}`}>자세히</Link>
     </article>
   );
 }

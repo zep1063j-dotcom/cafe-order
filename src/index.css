@@ -66,3 +66,21 @@ button {
   padding: 8px 12px;
   margin-bottom: 16px;
 }
+.site-header nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.site-header nav a.active {
+  font-weight: bold;
+}
+.cart-list {
+  padding: 0;
+  list-style: none;
+}
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e6dccf;
+}

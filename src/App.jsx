@@ -1,69 +1,37 @@
 import { useEffect, useState } from "react";
-import Header from "./components/Header.jsx";
-import MenuCard from "./components/MenuCard.jsx";
-import Footer from "./components/Footer.jsx";
-import { menus, categories } from "./data/menus.js";
+import { Routes, Route } from "react-router";
+import Layout from "./components/Layout.jsx";
+import MenuPage from "./pages/MenuPage.jsx";
+import MenuDetailPage from "./pages/MenuDetailPage.jsx";
+import CartPage from "./pages/CartPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
+// 담은 메뉴는 페이지를 옮겨 다녀도 남도록, 라우트 바깥의 App이 기억합니다
 function App() {
-  const [category, setCategory] = useState("전체"); // 고른 분류
-  const [keyword, setKeyword] = useState(""); // 찾는 글자 — 입력 칸과 이어진 state
-  const [cart, setCart] = useState([]); // 담은 메뉴들
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     document.title = cart.length > 0 ? `(${cart.length}) 오즈 카페` : "오즈 카페";
   }, [cart.length]);
 
-  // 보여 줄 메뉴는 state로 두지 않고 그릴 때마다 계산합니다
-  const visibleMenus = menus.filter(
-    (menu) =>
-      (category === "전체" || menu.category === category) && menu.name.includes(keyword),
-  );
-
   function handleAdd(menu) {
-    setCart([...cart, menu]); // 배열 state는 새 배열로 바꿉니다
+    setCart([...cart, menu]);
+  }
+
+  function handleRemove(index) {
+    setCart(cart.filter((_, i) => i !== index)); // 그 번호만 빼고 새 배열
   }
 
   return (
-    <>
-      <Header count={cart.length} />
-      <main>
-        <h2>메뉴</h2>
-        <div className="filters">
-          {categories.map((name) => (
-            <button
-              key={name}
-              type="button"
-              className={category === name ? "active" : ""}
-              onClick={() => setCategory(name)}
-            >
-              {name}
-            </button>
-          ))}
-        </div>
-        <input
-          className="search"
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
-          placeholder="메뉴 이름으로 찾기"
-        />
-        {visibleMenus.length === 0 ? (
-          <p>찾는 메뉴가 없어요</p>
-        ) : (
-          <div className="menu-list">
-            {visibleMenus.map((menu) => (
-              <MenuCard
-                key={menu.id}
-                name={menu.name}
-                price={menu.price}
-                desc={menu.desc}
-                onAdd={() => handleAdd(menu)}
-              />
-            ))}
-          </div>
-        )}
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      {/* 모든 페이지가 Layout(머리말 · 꼬리말) 안에 그려집니다 */}
+      <Route element={<Layout count={cart.length} />}>
+        <Route TODO 2 element={<MenuPage onAdd={handleAdd} />} />
+        <Route path="menu/TODO 3" element={<MenuDetailPage onAdd={handleAdd} />} />
+        <Route path="cart" element={<CartPage cart={cart} onRemove={handleRemove} />} />
+        <Route path="TODO 4" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 
