@@ -8,7 +8,7 @@ function Layout({ count }) {
     <>
       <Header count={count} />
       <main>
-        <TODO 1 />
+        <Outlet />
       </main>
       <Footer />
     </>
