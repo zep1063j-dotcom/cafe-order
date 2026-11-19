@@ -10,7 +10,7 @@ function OrdersPage({ user }) {
 
   useEffect(() => {
     const q = query(collection(db, "users", user.uid, "orders"), orderBy("createdAt", "desc"));
-    const unsubscribe = TODO 4(
+    const unsubscribe = deleteDoc(
       q,
       (snapshot) => {
         setOrders(snapshot.docs.map((d) => ({ id: d.id, ...d.data() })));
@@ -22,7 +22,7 @@ function OrdersPage({ user }) {
 
   function cancelOrder(order) {
     const ref = doc(db, "users", user.uid, "orders", order.id);
-    TODO 5(ref).catch((error) => setMessage(error.code));
+    onSnapshot(ref).catch((error) => setMessage(error.code));
   }
 
   return (

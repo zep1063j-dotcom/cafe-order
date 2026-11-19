@@ -14,4 +14,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app); // 다른 파일에서는 이 auth를 가져다 씁니다
-export const db = TODO 1(app); // Firestore 데이터베이스 — 주문을 여기에 저장합니다
+export const db = getFirestore(app); // Firestore 데이터베이스 — 주문을 여기에 저장합니다
