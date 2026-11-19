@@ -17,4 +17,5 @@ npm run dev
 - [x] DAY30 메뉴 목록과 거르기 — map · key · filter · 찾는 글자 칸 · 담은 메뉴 배열
 - [x] DAY31 페이지 — 메뉴 · 메뉴 하나 · 장바구니 · 없는 주소(react-router)
 - [x] DAY32 꾸미기 — Tailwind CSS, 좁은 화면 1칸 → 넓은 화면 2 · 3칸
-- [ ] DAY33 로그인 — Firebase Authentication, 로그인해야 들어가는 내 주문
+- [x] DAY33 로그인 — Firebase Authentication, 로그인해야 들어가는 내 주문
+- [ ] DAY34 주문 저장과 배포 — Firestore에 주문 저장 · 내 주문 · 주문 취소, 보안 규칙, Firebase Hosting

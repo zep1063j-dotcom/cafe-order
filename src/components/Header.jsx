@@ -25,7 +25,7 @@ function Header({ count, user }) {
             내 주문
           </NavLink>
           {user ? (
-            <Button variant="outline" onClick={() => TODO 6(auth)}>
+            <Button variant="outline" onClick={() => signOut(auth)}>
               로그아웃
             </Button>
           ) : (

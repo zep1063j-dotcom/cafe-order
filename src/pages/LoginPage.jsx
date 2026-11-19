@@ -21,11 +21,11 @@ function LoginPage({ user }) {
 
   function handleLogin(e) {
     e.preventDefault();
-    TODO 2(auth, email, password).catch((error) => setMessage(error.TODO 4));
+    signInWithEmailAndPassword(auth, email, password).catch((error) => setMessage(error.code));
   }
 
   function handleSignUp() {
-    TODO 3(auth, email, password).catch((error) => setMessage(error.code));
+    createUserWithEmailAndPassword(auth, email, password).catch((error) => setMessage(error.code));
   }
 
   return (
