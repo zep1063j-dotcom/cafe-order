@@ -10,11 +10,14 @@ const inputClass =
   "focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-200";
 
 // 로그인(/login) — 이메일과 비밀번호로 회원가입 · 로그인
-function LoginPage({ user }) {
+function LoginPage({ user, checking }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(""); // 실패했을 때의 오류 코드
 
+  if (checking) {
+    return <p className="text-stone-500">로그인 상태를 확인하는 중…</p>;
+  }
   if (user) {
     return <Navigate to="/" replace />; // 이미 로그인했으면 메뉴로
   }
