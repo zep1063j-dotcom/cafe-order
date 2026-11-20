@@ -34,7 +34,7 @@ function Header({ count, user }) {
             </NavLink>
           )}
         </nav>
-        {user && <p className="w-full text-right text-sm text-stone-500">{user.TODO 5}</p>}
+        {user && <p className="w-full text-right text-sm text-stone-500">{user.email}</p>}
       </div>
     </header>
   );
